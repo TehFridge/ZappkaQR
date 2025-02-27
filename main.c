@@ -116,7 +116,7 @@ bool make_qr(int totp, const char* usajd) {
 
     uint8_t qrcode[qrcodegen_BUFFER_LEN_MAX];
     uint8_t tempBuffer[qrcodegen_BUFFER_LEN_MAX];
-    
+    // dla najbardziej accurate kodu, maskowanie wyłączone. error correction na maxa. rozmiar wtedy powinien być równy 45x45
     bool ok = qrcodegen_encodeText(text, tempBuffer, qrcode, qrcodegen_Ecc_HIGH,
                                    qrcodegen_VERSION_MIN, qrcodegen_VERSION_MAX,
                                    qrcodegen_Mask_0, true);
